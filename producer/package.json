@@ -1,0 +1,26 @@
+{
+  "name": "producer",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "build": "npx tsc",
+    "dev": "tsc-watch --noClear -p ./tsconfig.json --onSuccess \"node ./dist/server.js\"",
+    "start": "node dist/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/amqplib": "^0.10.5",
+    "@types/node": "^22.8.4",
+    "@types/xlsx": "^0.0.36",
+    "nodemon": "^3.1.7",
+    "tsc-watch": "^6.2.0",
+    "typescript": "^5.6.3"
+  },
+  "dependencies": {
+    "amqplib": "^0.10.4",
+    "xlsx": "^0.18.5"
+  }
+}
