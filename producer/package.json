@@ -3,8 +3,11 @@
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
-    "build": "npx tsc",
+    "clean": "rimraf dist",
+    "prebuild": "npm run clean",
+    "build": "npx tsc && copyfiles -u 2 src/input/**/* dist/input",
     "dev": "tsc-watch --noClear -p ./tsconfig.json --onSuccess \"node ./dist/server.js\"",
+    "watch": "ts-node-dev --watch --clear --transpile-only src/server.ts",
     "start": "node dist/server.js"
   },
   "keywords": [],
@@ -15,7 +18,10 @@
     "@types/amqplib": "^0.10.5",
     "@types/node": "^22.8.4",
     "@types/xlsx": "^0.0.36",
+    "copyfiles": "^2.4.1",
     "nodemon": "^3.1.7",
+    "rimraf": "^6.0.1",
+    "ts-node-dev": "^2.0.0",
     "tsc-watch": "^6.2.0",
     "typescript": "^5.6.3"
   },
